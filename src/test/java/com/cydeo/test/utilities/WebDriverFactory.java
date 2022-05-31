@@ -18,16 +18,23 @@ public class WebDriverFactory {
 
         public static WebDriver getDriver(String browserType){
 
-            if(browserType.equalsIgnoreCase("chrome")){
-                WebDriverManager.chromedriver().setup();
-                return new ChromeDriver();
-            } else if(browserType.equalsIgnoreCase("firefox")){
-                WebDriverManager.firefoxdriver().setup();
-                return new FirefoxDriver();
-            }else{
-                System.out.println("Doesn't support this driver");
-                return null;
-            }
+            WebDriver driver;
 
+            switch (browserType.toLowerCase()){
+
+                case  "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                    break;
+                default:
+                    System.out.println("Unknown Browser type " + browserType);
+                    driver=null;
+            }
+            driver.manage().window().maximize();
+            return driver;
         }
 }
