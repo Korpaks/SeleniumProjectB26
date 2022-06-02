@@ -15,7 +15,7 @@ public class Checkbox {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 //        1. Go to http://practice.cydeo.com/checkboxes
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+
         driver.manage().window().maximize();
         //Providing extra time for our driver before it throws NoSuchElementException
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
