@@ -1,4 +1,4 @@
-package com.cydeo.test.day6_TestNG_dropdown_alert_iframe;
+package com.cydeo.test.day7_TestNG_dropdown_alert_iframe;
 
 import com.cydeo.test.utilities.TestBase;
 import org.openqa.selenium.By;
