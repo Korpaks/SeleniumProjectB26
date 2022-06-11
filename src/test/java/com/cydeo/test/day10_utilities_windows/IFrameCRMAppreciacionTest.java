@@ -1,5 +1,6 @@
 package com.cydeo.test.day10_utilities_windows;
 
+import com.cydeo.test.utilities.CRM_Utilities;
 import com.cydeo.test.utilities.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,12 +21,7 @@ public class IFrameCRMAppreciacionTest extends TestBase {
         driver.get("https://login2.nextbasecrm.com/");
 
 //        3- Login Homepage ( Login with valid username and password)
-        WebElement emailBox = driver.findElement(By.name("USER_LOGIN"));
-        emailBox.sendKeys("helpdesk9@cybertekschool.com");
-        WebElement passwordBox = driver.findElement(By.name("USER_PASSWORD"));
-        passwordBox.sendKeys("UserUser");
-        WebElement loginButton = driver.findElement(By.className("login-btn"));
-        loginButton.click();
+        CRM_Utilities.login_crm(driver, "helpdesk9@cybertekschool.com", "UserUser");
 
 //        4- Click the MORE tab and select APPRECIATION
         WebElement moreTab = driver.findElement(By.xpath("//span[@id='feed-add-post-form-link-text']"));
