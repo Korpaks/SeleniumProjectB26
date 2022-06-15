@@ -7,10 +7,11 @@ import org.openqa.selenium.WebElement;
 public class CRM_Utilities extends TestBase{
 
     public static void login_crm(WebDriver driver){
+        driver.get(ConfigurationReader.getProperty("env"));
         WebElement emailBox = driver.findElement(By.name("USER_LOGIN"));
-        emailBox.sendKeys("helpdesk9@cybertekschool.com");
+        emailBox.sendKeys(ConfigurationReader.getProperty("username"));
         WebElement passwordBox = driver.findElement(By.name("USER_PASSWORD"));
-        passwordBox.sendKeys("UserUser");
+        passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
         WebElement loginButton = driver.findElement(By.className("login-btn"));
         loginButton.click();
     }
